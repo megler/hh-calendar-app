@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Calendar Checkout
+{% endblock %}
+
+{% block main %}
+    <div class="content">
+
+
+		{# Layout Credit:  https://www.tutorialrepublic.com/codelab.php?topic=bootstrap&file=simple-registration-form #}
+		<div class="form-styles">
+    		<h1>Checkout</h1>
+    		<h2 class="order_details">Here are your order details:</h2>
+    		<dl class="row">
+              <dt class="col-sm-6">Name:</dt>
+              <dd class="col-sm-6">{{ dog_names }}  {{ last_name }}</dd>
+              <dt class="col-sm-6">How Many Votes You're Casting:</dt>
+              <dd class="col-sm-6">{{ new_votes }}</dd>
+              <dt class="col-sm-6">Your Total:</dt>
+              <dd class="col-sm-6">{{ "$%.2f"|format(new_votes) }}</dd>
+            </dl>
+    		<form action="/finish" method="post" class="text-center">
+    		   <script
+    		      src="https://checkout.stripe.com/checkout.js"
+    		      class="stripe-button"
+    		      data-amount="{{ amount }}"
+    		      data-key="{{ key }}"
+    		      data-description="Vote for {{ dog_names }} {{ last_name }}"
+    		      data-locale="auto">
+    		   </script>
+    		</form>
+		<div>
+	</div>
+{% endblock %}

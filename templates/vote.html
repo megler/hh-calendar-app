@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Calendar Contestants
+{% endblock %}
+
+{% block main %}
+    <h2>Houndhaven Calendar Contestants</h2>
+    <!--Table-->
+	<table id="portfolio" class="table table-striped">
+		<!--Table head-->
+		<thead>
+			<tr>
+				<th>Photo</th>
+				<th>Number of Votes</th>
+				<th>Dog Name</th>
+			</tr>
+		</thead>
+		<!--Table head-->
+		<!--Table body-->
+		<tbody>
+		    {% for row in table %}
+			<tr>
+				<td><a href="{{ image_url }}{{ row["url"] }}" data-toggle="lightbox">
+                <img src="{{ image_url }}{{ row["url_thumb"] }}" alt="{{ row["dog_names"] }}" class="img-fluid">
+            </a></td>
+                <td>Current Number of Votes: {{ row["votes"] }}</td>
+                <td>
+                	<p>{{ row["dog_names"] }} {{ row["last_name"] }}</p>
+                	<div>
+						<div class="form-group">
+							<form action="/create_votes" method="post">
+								<input type="hidden" id="dog_name" name="dog_name" value="{{ row["dog_names"] }}">
+								<input type="hidden" id="last_name" name="last_name" value="{{ row["last_name"] }}">
+								<label for="votes" title="Vote for {{ row["dog_names"] }}" type="text"/>
+								<input class="w-50" name="quantity" type="number" id="replyNumber" min="0" data-bind="value:replyNumber" placeholder="Enter Votes" />
+								<button class="btn btn-success" type="submit">Vote Now</button>
+							</form>
+						</div>
+                	</div>
+            	</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+		<!--Table body-->
+	</table>
+	<!--Table-->
+{% endblock %}

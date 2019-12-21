@@ -1,5 +1,4 @@
 import os
-import sqlite3
 import functools
 import uuid
 import tinify
@@ -20,12 +19,12 @@ application = app = Flask(__name__)
 SECRET_KEY=os.urandom(24)
 
 stripe_keys = {
-  'secret_key': os.environ['STRIPE_SECRET_KEY'],
-  'publishable_key': os.environ['STRIPE_PUBLISHABLE_KEY']
+  'secret_key': os.getenv('STRIPE_SECRET_KEY'),
+  'publishable_key': os.getenv('STRIPE_PUBLISHABLE_KEY')
 }
 
 stripe.api_key = stripe_keys['secret_key']
-tinify.key = os.environ['TINIFY_SECRET_KEY']
+tinify.key = os.getenv('TINIFY_SECRET_KEY')
 
 # Sessions
 
@@ -94,8 +93,8 @@ def upload():
         source = tinify.from_file(image_file)
         source.store(
             service="s3",
-            aws_access_key_id=os.environ['AWS_ACCESS_KEY_ID'],
-            aws_secret_access_key=os.environ['AWS_SECRET_ACCESS_KEY'],
+            aws_access_key_id=os.getenv('AWS_ACCESS_KEY_ID'),
+            aws_secret_access_key=os.getenv('AWS_SECRET_ACCESS_KEY'),
             region="us-east-1",
             path=f"calendar-photos/{filename}"
         )
@@ -111,12 +110,12 @@ def upload():
         new_name = "{name}_{thumb}{ext}".format(name=name, thumb="thumb", ext=ext)
         resized.store(
             service="s3",
-            aws_access_key_id=os.environ['AWS_ACCESS_KEY_ID'],
-            aws_secret_access_key=os.environ['AWS_SECRET_ACCESS_KEY'],
+            aws_access_key_id=os.getenv('AWS_ACCESS_KEY_ID'),
+            aws_secret_access_key=os.getenv('AWS_SECRET_ACCESS_KEY'),
             region="us-east-1",
             path=f"calendar-photos/{new_name}"
         )
-		
+
 		# insert to database
         new_name_url = str(new_name)
         votes = 0

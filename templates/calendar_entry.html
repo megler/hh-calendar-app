@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Enter Your Dog
+{% endblock %}
+
+{% block main %}
+	<div class="container">
+  		<div class="header clearfix">
+	  		<h3 class="text-muted">How To Enter Your Photo</h3>
+  		</div>
+		{# Layout Credit:  https://www.tutorialrepublic.com/codelab.php?topic=bootstrap&file=simple-registration-form #}
+		<div class="form-styles">
+			<h4>To enter your dog in the calendar contest, please follow these steps:</h4>
+			<ol>
+			   <li>Click the button below to be redirected to Stripe.  The entry fee is $10.00</li>
+			   <li>After successful payment via Stripe, you will be re-directed to the photo submission page.</li>
+			   <li>Complete the form on the photo submission page and your dog will be officially entered!</li>
+			</ol>
+			<form action="/entry" method="post">
+			   <script
+			      src="https://checkout.stripe.com/checkout.js"
+			      class="stripe-button"
+			      data-key="{{ key }}"
+			      data-amount= "1000"
+			      data-description="Houndhaven Calendar Entry"
+			      data-locale="auto">
+			   </script>
+			</form>
+		</div>
+	</div>
+{% endblock %}

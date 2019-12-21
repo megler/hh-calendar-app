@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Leaderboard
+{% endblock %}
+
+{% block main %}
+    <h2>Houndhaven Calendar Top 12</h2>
+
+    <!--Table-->
+	<table id="portfolio" class="table table-striped">
+		<!--Table head-->
+		<thead>
+			<tr>
+				<th>Photo</th>
+				<th>Number of Votes</th>
+				<th>Dog Name</th>
+			</tr>
+		</thead>
+		<!--Table head-->
+		<!--Table body-->
+		<tbody>
+		    {% for row in table %}
+			<tr>
+				<td><a href="{{ image_url }}{{ row["url"] }}" data-toggle="lightbox">
+                <img src="{{ image_url }}{{ row["url_thumb"] }}" alt="{{ row["dog_names"] }} class="img-fluid">
+            </a></td>
+                <td>Current Number of Votes: {{ row["votes"] }}</td>
+                <td class="name">{{ row["dog_names"] }} {{ row["last_name"] }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+		<!--Table body-->
+	</table>
+	<!--Table-->
+{% endblock %}

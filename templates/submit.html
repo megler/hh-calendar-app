@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Submit Photo
+{% endblock %}
+
+{% block main %}
+  <div class="content">
+  	<div class="header clearfix">
+  		<h3 class="text-muted">Houndhaven Calendar Contest Photo Submission</h3>
+    </div>
+	{# Layout Credit:  https://www.tutorialrepublic.com/codelab.php?topic=bootstrap&file=simple-registration-form #}
+	<div class="form-styles">
+		<h5>Please fill out this form to enter your dog in the calendar contest</h5>
+		<form method="POST" action="/upload" enctype=multipart/form-data>
+			<div class="form-group">
+			  <label for="first_name">First Name:</label>
+				<div class="col-xs-6"><input type="text" class="form-control" name="first_name" id="first_name" placeholder="First Name"></div>
+			</div>
+			<div class="form-group">
+			  <label for="last_name">Last Name:</label>
+				<div class="col-xs-6"><input type="text" class="form-control" name="last_name" id="last_name" placeholder="Last Name"></div>
+			</div>
+			<div class="form-group">
+			  <label for="email">Email Address:</label>
+				<div class="col-xs-6"><input type="email" class="form-control" name="email" id="email" placeholder="Email Address"></div>
+			</div>
+			<div class="form-group">
+			  <label for="dog_names">Please list dog(s) in photo - <span>first names only:</span></label>
+				<div class="col-xs-6"><input type="text" class="form-control" name="dog_names" id="dog_names" placeholder="Dog(s) First Name Only"></div>
+			</div>
+			<div class="form-group">
+			  <label for="file">Attach photo (.jpg, .png, .gif formats only):</label>
+				<div class="col-xs-6"><input type="file" name="file" id="file" class="form-control-file" placeholder="Attach photo"></div>
+			</div>
+			<div class="form-group">
+				<button type="submit" class="btn btn-success btn-lg btn-block">Submit</button>
+			</div>
+		</form>
+	</div>
+{% endblock %}

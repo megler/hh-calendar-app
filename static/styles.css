@@ -1,0 +1,200 @@
+/* Register Form Styles */
+/* Layout Credit: https://www.tutorialrepublic.com/codelab.php?topic=bootstrap&file=simple-registration-form */
+
+.form-control{
+	height: 40px;
+	box-shadow: none;
+	color: #969fa4;
+}
+.form-control:focus{
+	border-color: #5cb85c;
+}
+.form-control, .btn{
+    border-radius: 3px;
+}
+.form-styles{
+	width: 600px;
+	margin: 0 auto;
+
+}
+.form-styles h2{
+  margin: 0 0 15px;
+	position: relative;
+	text-align: center;
+}
+
+.form-styles .hint-text{
+	color: #999;
+	margin-bottom: 30px;
+	text-align: center;
+}
+.form-styles form{
+	border-radius: 3px;
+	margin-bottom: 15px;
+    background: #f2f3f7;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+}
+.form-styles .form-group{
+	margin-bottom: 20px;
+}
+.form-styles input[type="checkbox"]{
+	margin-top: 3px;
+}
+.form-styles .btn{
+    font-size: 16px;
+    font-weight: bold;
+	min-width: 140px;
+    outline: none !important;
+}
+.form-styles .row div:first-child{
+	padding-right: 10px;
+}
+.form-styles .row div:last-child{
+	padding-left: 10px;
+}
+.form-styles a:hover{
+	text-decoration: none;
+}
+.form-styles form a{
+	color: #5cb85c;
+	text-decoration: none;
+}
+.form-styles form a:hover{
+	text-decoration: underline;
+}
+
+/* End Register Form Styles */
+
+.name {
+	font-weight: bold;
+}
+
+.order_details {
+	font-weight: bold;
+	padding-bottom: 1em;
+}
+
+/* Begin Homepage CSS */
+
+/* Space out content a bit */
+body {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  color: #999;
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #636363;
+}
+
+p > span {
+  font-weight: bold;
+  color: #5F021F;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+/* Custom page header */
+.header {
+  padding-bottom: 1rem;
+  border-bottom: .05rem solid #e5e5e5;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 3rem;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 1.5rem;
+  color: #777;
+  border-top: .05rem solid #e5e5e5;
+}
+
+/* Customize container */
+@media (min-width: 48em) {
+  .container {
+    max-width: 50rem;
+  }
+}
+.container-narrow > hr {
+  margin: 2rem 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: .05rem solid #e5e5e5;
+}
+.jumbotron .btn {
+  padding: .75rem 1.5rem;
+  font-size: 1.5rem;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 3rem 0;
+}
+.marketing p + h4 {
+  margin-top: 1.5rem;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 48em) {
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 2rem;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+/* Begin Call To Action Styles */
+
+.bs-calltoaction{
+    border: 1px solid black;
+    padding: 15px 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+
+}
+
+.bs-calltoaction.bs-calltoaction-success{
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+.cta-title {
+  color: #fff;
+}
+
+.bs-calltoaction.bs-calltoaction-success .cta-button .btn {
+    border-color:#fff;
+}
+
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+}
+
+
