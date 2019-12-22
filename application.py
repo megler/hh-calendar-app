@@ -228,6 +228,5 @@ def finish():
     finally:
         return redirect('/vote')
 
-
 if __name__ == "__main__":
     app.run()
